@@ -25,6 +25,22 @@ docker run -d -p 4000:8080 --name docker_container_name docker_image
 
 
 
+#!/bin/bash
+sudo su
+
+# Check if Maven is installed, if not, install it
+if ! command -v mvn &> /dev/null; then
+    apt update -y && apt install -y maven
+fi
+
+# Check if Docker is installed, if not, install it
+if ! command -v docker &> /dev/null; then
+    apt update -y && apt install -y docker.io
+fi
+
+
+
+
 
 
 
