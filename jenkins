@@ -13,5 +13,18 @@ http://ec2-16-16-207-162.eu-north-1.compute.amazonaws.com:8080/
 
 
 
+mvn clean install
+docker built -t docker_image
+if ( docker ps | grep 'docker_container_name' );
+then;
+	docker stop docker_container_name
+    docker rm -f docker_container_name
+fi
+docker run -d -p 4000:8080 --name docker_container_name docker_image
+
+
+
+
+
 
 
